@@ -72,7 +72,7 @@ $CMAKE_EXE "$(dirs +1)" $CMAKE_VARS_DEFINE -G "Unix Makefiles" -DCMAKE_INSTALL_P
 	-DBUILD_python_layer=off \
 	-DUSE_LEVELDB=on \
 	-DUSE_LMDB=on \
-	-DUSE_OPENCV=on 
+	-DUSE_OPENCV=off \ 
 exit_on_error
 # 修改所有 link.txt 删除-lstdc++ 选项，保证静态连接libstdc++库,否则在USE_OPENCV=on的情况下，libstdc++不会静态链接
 for file in $(find . -name link.txt)

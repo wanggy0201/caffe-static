@@ -182,7 +182,7 @@ fetch_ssd_clone(){
 	eval $(declare_project_local_vars SSD)
 	remove_if_exist $SOURCE_ROOT/$folder
 	echo "$prefix代码clone到 $SOURCE_ROOT/$folder 文件夹下"
-	git clone --recursive https://github.com/weiliu89/caffe.git $SOURCE_ROOT/$folder
+	git clone --recursive https://github.com/BVLC/caffe.git $SOURCE_ROOT/$folder
 	exit_on_error
 
 	pushd $SOURCE_ROOT/$folder
@@ -199,7 +199,7 @@ fetch_ssd_zip(){
 	then
 		remove_if_exist $PACKAGE_ROOT/$package
 		echo "${FUNCNAME[0]}:(下载源码)downloading $prefix $version source"
-		wget --no-check-certificate https://github.com/weiliu89/caffe/archive/ssd.zip -O $PACKAGE_ROOT/$package
+		wget --no-check-certificate https://github.com/BVLC/caffe/archive/ssd.zip -O $PACKAGE_ROOT/$package
 		exit_on_error
 	fi
 

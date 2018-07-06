@@ -61,7 +61,7 @@ $CMAKE_EXE "`dirs +1`" $CMAKE_VARS_DEFINE -G "Unix Makefiles" -DCMAKE_INSTALL_PR
 	-DWITH_TIFF=on \
 	-DWITH_1394=off \
 	-DWITH_EIGEN=off \
-	-DWITH_FFMPEG=off \
+	-DWITH_FFMPEG=on \
 	-DWITH_GIGEAPI=off \
 	-DWITH_GSTREAMER=off \
 	-DWITH_GTK=off \
@@ -72,7 +72,11 @@ $CMAKE_EXE "`dirs +1`" $CMAKE_VARS_DEFINE -G "Unix Makefiles" -DCMAKE_INSTALL_PR
 	-DWITH_CUFFT=off \
 	-DWITH_OPENCL=off \
 	-DWITH_OPENCLAMDBLAS=off \
-	-DWITH_OPENCLAMDFFT=off 
+	-DWITH_OPENCLAMDFFT=off \
+	-DENABLE_PRECOMPILED_HEADERS=OFF \
+	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
+	-DWITH_IPP=OFF?-DCMAKE_BUILD_TYPE=DEBUG \
+	
 #read -n 1
 exit_on_error
 remove_if_exist $install_path  
